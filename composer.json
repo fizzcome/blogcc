@@ -1,0 +1,8 @@
+{
+	"require":{
+		"endroid/qrcode"	 : "1.*@dev",
+		"intervention/image" : "dev-master",
+		"phpmailer/phpmailer": "dev-master",
+		"symfony/class-loader": "2.1.*"
+	}
+}
