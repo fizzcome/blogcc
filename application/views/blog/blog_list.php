@@ -33,14 +33,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">后台管理系统</a>
+      <a class="navbar-brand" href="/">博客长城</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="dropdown">
+        <li class="active"><a href="#">推荐</a></li>
+        <li><a href="#about">前端</a></li>
+        <li><a href="#contact">后端</a></li>
+        <li><a href="#contact">工具</a></li>
+        <li><a href="#contact">其他</a></li>
+        <li><a href="#contact">站长CMS</a></li>
+<!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -51,21 +54,26 @@
             <li><a href="#">Separated link</a></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
       <!-- 右边区域 -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <!-- <li><a href="#">Link</a></li> -->
+        <?php if(empty($login_status)): ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">fizz <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">博客发布</a></li>
+              <li><a href="#">博客管理</a></li>
+              <li class="divider"></li>
+              <li><a href="#">退出登陆</a></li>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="dropdown">
+            <a href="#" class="" role="button">登陆 </a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
