@@ -118,9 +118,10 @@
             <span class="col-sm-12 col-xs-6">
               <button type="button" class="btn btn-primary btn-sm btn-block"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span> &nbsp;删 除</button>
             </span>
+            <input type="hidden" name="face" value="" />
           </div>
           <span class="col-sm-8 col-xs-5">
-           <img src="data/image/demo.png" alt="">
+           <img src="/data/image/demo.jpg" alt="">
           </span>
         </div>
      </div>
