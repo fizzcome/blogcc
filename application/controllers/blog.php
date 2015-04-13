@@ -8,47 +8,16 @@ class Blog extends CI_Controller {
 	}
 
 	/**
-	 * index 展示博客列表
-	 */
-	public function index(){
-		// $query = $this->blog_model->get_blog_list();
-		$query = $this->db->get('category');
-		$query = $this->db->get('blog');
-		$data['list'] = $query->result();
-		$this->load->view('blog/blog_list',$data);
-	}
-	
-	public function test(){
-		return 2;
-	}
-	
-	public function test2(){
-		$this->load->helper('category');
-		echo get_cate();
-	}
-
-	/**
-	 * 获取分类
-	 */
-	public function get_cate_list(){
-		$query = $this->db->get('category');
-		$query_array = $query->result_array();
-		$this->load->helper('category');
-		echo "<pre>";
-		V(get_cate($query_array));
-	}
-	
-
-	/**
 	 * 发布博客
 	 */
 	// 发布博客页面
 	public function add_view(){
 		//加载form辅助函数
 		$this->load->helper('form');
-		$query = $this->db->get('category');
-		$data = $query->result_array();
-// 		get_cate_list($data);exit;
+		$this->load->helper('category');				//调用无限极分类辅助函数
+		$query = $this->db->get('category');			//查询所有分类
+		$query_array = $query->result_array();			//格式化查询结果为数组形式
+		$data['cate_list'] = get_cate($query_array);	//调用分类函数并得出结果
 		$this->load->view('blog/blog_add', $data);
 	}
 	// 处理发布博客页面

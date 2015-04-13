@@ -1,25 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>blogcc</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-	<style>
-		/*.clearfix{clear:both; margin-top:4em;}*/
+  <meta charset="UTF-8">
+  <title>blogcc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <style>
+    /*.clearfix{clear:both; margin-top:4em;}*/
     li { list-style :none;}
-	</style>
+  </style>
 </head>
 <body style="color: rgb(0, 0, 0); background-color: rgb(204, 232, 207);" class="responsive">
 <!-- 导航栏 -->
@@ -50,7 +42,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">fizz <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">博客发布</a></li>
+              <li><a href="blog/add_view">博客发布</a></li>
               <li><a href="#">博客管理</a></li>
               <li class="divider"></li>
               <li><a href="#">退出登陆</a></li>
@@ -69,14 +61,8 @@
 <!-- 固定顶部占位 -->
 <div class="navbar"></div>
 <!-- 导航结束 -->
+
 <div class="container">
-  <div class="row-fluid">
-    <span>博客列表</span>
-    <span class="pull-right">
-      <a href="<?php echo site_url() ?>/blog/add_view"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 添加博客</button></a>
-    </span>
-    <hr>
-  </div>
   <div class="row-fluid diannaoduan">
       <?php foreach ($list as $key => $value):?>
           <div class="thumbnail col-md-3">
@@ -133,6 +119,8 @@
 
 </div>
 
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script>
 $(function(){
   function browserRedirect() {

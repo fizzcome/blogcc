@@ -1,101 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>blogcc</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>data/bootstrap-3.3.4-dist/css/bootstrap.min.css"> -->
-
-	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-	<!-- <link rel="stylesheet" href="./bootstrap-3.3.4-dist/css/bootstrap-theme.min.css"> -->
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-  <!-- 
-	<script src="./bootstrap-3.3.4-dist/js/jquery.min.js"></script>
- -->
-  <!-- Bootstrap core CSS -->
-  <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Optional Bootstrap Theme -->
-  <link href="data:text/css;charset=utf-8," data-href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<!-- // <script src="./bootstrap-3.3.4-dist/js/bootstrap.min.js"></script> -->
-<!-- 
-  <script src="http://files.cnblogs.com/rubylouvre/bootstrap-modal.js"></script>  
- -->
-	<style>
-		/*.clearfix{clear:both; margin-top:4em;}*/
+  <meta charset="UTF-8">
+  <title>blogcc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <style>
+    /*.clearfix{clear:both; margin-top:4em;}*/
     li { list-style :none;}
-	</style>
+  </style>
 </head>
 <body style="color: rgb(0, 0, 0); background-color: rgb(204, 232, 207);" class="responsive">
 <!-- 导航栏 -->
 <div class="row-fluid">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">后台管理系统</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!-- 右边区域 -->
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!--/.nav-collapse -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">博客长城</a>
     </div>
-  </nav>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">推荐</a></li>
+        <li><a href="#about">前端</a></li>
+        <li><a href="#contact">后端</a></li>
+        <li><a href="#contact">工具</a></li>
+        <li><a href="#contact">其他</a></li>
+        <li><a href="#contact">站长CMS</a></li>
+      </ul>
+      <!-- 右边区域 -->
+      <ul class="nav navbar-nav navbar-right">
+        <?php if(empty($login_status)): ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">fizz <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php echo site_url() ?>/blog/add_view">博客发布</a></li>
+              <li><a href="#">博客管理</a></li>
+              <li class="divider"></li>
+              <li><a href="#">退出登陆</a></li>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="dropdown">
+            <a href="#" class="" role="button">登陆 </a>
+          </li>
+        <?php endif; ?>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 </div>
 <!-- 固定顶部占位 -->
 <div class="navbar"></div>
 <!-- 导航结束 -->
 
-
-
-
-
 <div class="container">
-  <div class="row-fluid">
-    <span>添加博客</span>
-    <span class="pull-right">
-      <a href="./index.html"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 博客列表</button></a>
-    </span>
-    <hr>
-  </div>
   <form class="form-horizontal" action="add" method="post" role="form">
      <div class="form-group">
         <label for="title" class="col-sm-2 control-label">标题</label>
@@ -224,7 +191,7 @@
                   <label for="recipient-name" class="control-label">选择父级分类:</label>
                   <div class="">
                     <select name="cate_id" class="form-control">
-                     <option>请选择</option>
+                     <option value="0">顶级分类</option>
                      <option value="1">php</option>
                     </select>
                   </div>
@@ -244,7 +211,7 @@
                   <label for="recipient-name" class="control-label">选择分类:</label>
                   <div class="">
                     <select name="cate_id" class="form-control">
-                     <option>请选择</option>
+                     <option value="0">顶级分类</option>
                      <option value="1">php</option>
                     </select>
                   </div>
@@ -265,7 +232,7 @@
                   <label for="recipient-name" class="control-label">选择分类:</label>
                   <div class="">
                     <select name="cate_id" class="form-control">
-                     <option>请选择</option>
+                     <option value="0">顶级分类</option>
                      <option value="1">php</option>
                     </select>
                   </div>
@@ -286,8 +253,6 @@
     </div>
   </div>
 </div>
-
-<div id="ccdd">123</div>
 
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
