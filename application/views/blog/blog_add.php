@@ -96,7 +96,7 @@
     </span>
     <hr>
   </div>
-  <form class="form-horizontal" action="insert" method="post" role="form">
+  <form class="form-horizontal" action="add" method="post" role="form">
      <div class="form-group">
         <label for="title" class="col-sm-2 control-label">标题</label>
         <div class="col-sm-10">
@@ -108,8 +108,10 @@
         <label for="category" class="col-sm-2 control-label">分类</label>
         <div class="col-sm-8">
           <select name="cate_id" class="form-control">
-           <option>请选择</option>
-           <option value="1">php</option>
+            <option value="0">请选择</option>
+            <?php foreach ($category as $key => $value): ?>
+              <option value="<?php echo $value->id ?>"><?php echo $value->name ?></option>
+            <?php endforeach; ?>
           </select>
         </div>
 <!--         <div class="col-sm-3">
@@ -195,68 +197,6 @@
 
 
 <!-- 弹出层区域 -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-<!-- 添加分类 -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">添加分类</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">选择父级分类:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="control-label">添加分类名称:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">添加</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- 添加分类 -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">添加分类</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">选择父级分类:</label>
-            <div class="">
-              <select name="cate_id" class="form-control">
-               <option>请选择</option>
-               <option value="1">php</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="control-label">添加分类名称:</label>
-            <input type="text" class="form-control" id="category-add">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">添加</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- 添加分类 -->
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -268,7 +208,7 @@
         <div role="tabpanel">
 
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs nav-justified" role="tablist">
+          <ul class="nav nav-tabs nav-justified" role="tablist" id="category_manage">
             <li role="presentation" class="active"><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-1" aria-controls="panel-1" role="tab" data-toggle="tab">添加分类</a></li>
             <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-2" aria-controls="panel-2" role="tab" data-toggle="tab">编辑分类</a></li>
             <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-3" aria-controls="panel-3" role="tab" data-toggle="tab">删除分类</a></li>
@@ -276,9 +216,10 @@
 
           <!-- Tab panes -->
           <div class="tab-content">
+            <!-- 添加分类 -->
             <div role="tabpanel" class="tab-pane active" id="panel-1">
 
-              <form>
+              <?php echo form_open('blog/category_add') ?>
                 <div class="form-group">
                   <label for="recipient-name" class="control-label">选择父级分类:</label>
                   <div class="">
@@ -290,15 +231,15 @@
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="control-label">添加分类名称:</label>
-                  <input type="text" class="form-control" id="category-add">
+                  <input type="text" class="form-control" name="category-name">
                 </div>
               </form>
 
             </div><!--/.tab-panel -->
-
+            <!-- 编辑分类 -->
             <div role="tabpanel" class="tab-pane" id="panel-2">
 
-              <form>
+              <?php echo form_open('blog/category_edit') ?>
                 <div class="form-group">
                   <label for="recipient-name" class="control-label">选择分类:</label>
                   <div class="">
@@ -310,15 +251,16 @@
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="control-label">编辑分类名称:</label>
-                  <input type="text" class="form-control" id="category-add">
+                  <input type="text" class="form-control" name="category-name">
                 </div>
               </form>
 
             </div><!--/.tab-panel -->
 
+            <!-- 删除分类 -->
             <div role="tabpanel" class="tab-pane" id="panel-3">
 
-              <form>
+              <?php echo form_open('blog/category_del') ?>
                 <div class="form-group">
                   <label for="recipient-name" class="control-label">选择分类:</label>
                   <div class="">
@@ -336,46 +278,85 @@
 
         </div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary">确定</button>
+        <button type="button" class="btn btn-primary" onClick="doSubmit()">确定</button>
       </div>
     </div>
   </div>
 </div>
 
+<div id="ccdd">123</div>
 
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-<script>
+<script type="text/javascript">
 $(function(){
-  // 添加分类框显示
-  function addCategory(this){
+   /*
+  * 分类操作的提交
+  */
+  function doSubmit(){
     alert(3)
-    // $(this).parent().prev().show();
+    var formid = $('#ccdd').html();
+    // alert(formid)
+      $('#category_manage li').each(fucntion(){
+        alert($(this).attr('aria-controls'))
+    //     if($(this).hasClass('active')){
+    //       formid = $(this).attr('aria-controls');
+    //     }
+      });
+    //   alert(formid)
+    // $('#'+formid).find('form').submit();
   }
-  //  判断设备是pc或手机
-  function browserRedirect() {
-      var sUserAgent = navigator.userAgent.toLowerCase();
-      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-      var bIsAndroid = sUserAgent.match(/android/i) == "android";
-      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-      if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
-          $('.diannaoduan').hide();
-          // window.location.href="http://www.qq.com";
-      }else{
-          $('.shoujiduan').hide();
-          // window.location.href="http://wap.yy.com";
-      }
-  }
-  browserRedirect();
+
+doSubmit();
 });
+</script>
+<script>
+  // alert(5)
+
+/*
+ *
+ */
+
+ /*
+  *
+  */
+
+
+
+
+
+/*
+ *  判断手机端或者电脑端登陆
+ */
+  // 添加分类框显示
+  // function addCategory(this){
+    // alert(3)
+    // $(this).parent().prev().show();
+  // }
+  //  判断设备是pc或手机
+  // function browserRedirect() {
+  //     var sUserAgent = navigator.userAgent.toLowerCase();
+  //     var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+  //     var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+  //     var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+  //     var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+  //     var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+  //     var bIsAndroid = sUserAgent.match(/android/i) == "android";
+  //     var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+  //     var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+  //     if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+  //         $('.diannaoduan').hide();
+  //         // window.location.href="http://www.qq.com";
+  //     }else{
+  //         $('.shoujiduan').hide();
+  //         // window.location.href="http://wap.yy.com";
+  //     }
+  // }
+  // browserRedirect();
+// });
 
 </script>
 </body>

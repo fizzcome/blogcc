@@ -78,7 +78,7 @@
   <div class="row-fluid">
     <span>博客列表</span>
     <span class="pull-right">
-      <a href="blog/insert_view"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 添加博客</button></a>
+      <a href="<?php echo site_url() ?>/blog/add_view"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 添加博客</button></a>
     </span>
     <hr>
   </div>

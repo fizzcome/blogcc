@@ -89,7 +89,8 @@ $autoload['drivers'] = array();
 */
 
 $autoload['helper'] = array(
-		'url'
+		'url',
+		'function_common',		//常用公共函数
 	);
 
 
