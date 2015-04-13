@@ -31,7 +31,7 @@ class Blog extends CI_Controller {
 		}
 		if($this->db->insert('blog',$data)){
 			echo "<script>alert('操作成功!');</script>";
-			redirect('blog');
+			redirect('/');
 		}else{
 			echo "<script>alert('操作失败!');history.back();</script>";
 		}
@@ -42,9 +42,12 @@ class Blog extends CI_Controller {
 	 */
 	// 添加分类
 	public function category_add(){
+		// V($_POST);exit;
 		$pid = $this->input->post('cate_id');
 		$name = $this->input->post('category-name');
-		$path = $this->db->select('path')->get_where('category',array('id'=>$pid));
+		$query = $this->db->select('path')->get_where('category',array('id'=>$pid));
+		$query_array = ($query->result_array());
+		$path = $query_array[0]['path'];
 		$data = array(
 			'name' 	=> $name,
 			'pid'	=> $pid,
@@ -60,7 +63,7 @@ class Blog extends CI_Controller {
 	}
 	// 删除分类
 	public function category_del(){
-		$id = $this->input->post('id');
+		$id = $this->input->post('cate_id');
 		$where = array('id'=>$id);
 		if($this->db->delete('category',$where)){
 			echo "<script>alert('操作成功!');</script>";
@@ -71,8 +74,8 @@ class Blog extends CI_Controller {
 	}
 	// 编辑分类
 	public function category_edit(){
-		$id = $this->input->post('id');
-		$name = $this->input->post('name');
+		$id = $this->input->post('cate_id');
+		$name = $this->input->post('category-name');
 		$data = array('name'=>$name);
 		$where = array('id'=>$id);
 		if($this->db->update('category',$data,$where)){

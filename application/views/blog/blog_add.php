@@ -76,8 +76,8 @@
         <div class="col-sm-8">
           <select name="cate_id" class="form-control">
             <option value="0">请选择</option>
-            <?php foreach ($category as $key => $value): ?>
-              <option value="<?php echo $value->id ?>"><?php echo $value->name ?></option>
+            <?php foreach ($cate_list as $key => $value): ?>
+              <option value="<?php echo $value['id'] ?>"><?php echo $value['html'].$value['name'] ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -176,7 +176,7 @@
 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs nav-justified" role="tablist" id="category_manage">
-            <li role="presentation" class="active"><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-1" aria-controls="panel-1" role="tab" data-toggle="tab">添加分类</a></li>
+            <li role="presentation" class="active" aa="5"><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-1" aria-controls="panel-1" role="tab" data-toggle="tab">添加分类</a></li>
             <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-2" aria-controls="panel-2" role="tab" data-toggle="tab">编辑分类</a></li>
             <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-3" aria-controls="panel-3" role="tab" data-toggle="tab">删除分类</a></li>
           </ul>
@@ -192,7 +192,9 @@
                   <div class="">
                     <select name="cate_id" class="form-control">
                      <option value="0">顶级分类</option>
-                     <option value="1">php</option>
+                      <?php foreach ($cate_list as $key => $value): ?>
+                        <option value="<?php echo $value['id'] ?>"><?php echo $value['html'].$value['name'] ?></option>
+                      <?php endforeach; ?>
                     </select>
                   </div>
                 </div>
@@ -212,7 +214,9 @@
                   <div class="">
                     <select name="cate_id" class="form-control">
                      <option value="0">顶级分类</option>
-                     <option value="1">php</option>
+                     <?php foreach ($cate_list as $key => $value): ?>
+                        <option value="<?php echo $value['id'] ?>"><?php echo $value['html'].$value['name'] ?></option>
+                      <?php endforeach; ?>
                     </select>
                   </div>
                 </div>
@@ -233,7 +237,9 @@
                   <div class="">
                     <select name="cate_id" class="form-control">
                      <option value="0">顶级分类</option>
-                     <option value="1">php</option>
+                     <?php foreach ($cate_list as $key => $value): ?>
+                        <option value="<?php echo $value['id'] ?>"><?php echo $value['html'].$value['name'] ?></option>
+                      <?php endforeach; ?>
                     </select>
                   </div>
                 </div>
@@ -248,7 +254,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" onClick="doSubmit()">确定</button>
+        <button type="button" class="btn btn-primary fizz-confirm" onClick="doSubmit()">确定</button>
       </div>
     </div>
   </div>
@@ -261,21 +267,21 @@ $(function(){
    /*
   * 分类操作的提交
   */
-  function doSubmit(){
-    alert(3)
-    var formid = $('#ccdd').html();
-    // alert(formid)
-      $('#category_manage li').each(fucntion(){
-        alert($(this).attr('aria-controls'))
-    //     if($(this).hasClass('active')){
-    //       formid = $(this).attr('aria-controls');
-    //     }
-      });
-    //   alert(formid)
-    // $('#'+formid).find('form').submit();
-  }
+  $('.fizz-confirm').click(function(){
+    $('.tab-pane').each(function(){
+        var formid;
+        var thiss = $(this);
+        if(thiss.hasClass('active')){
+          // alert(3)
+          // formid = thiss.attr('aa');
+          // aler(formid)
+          thiss.find('form').submit();
+        }
+        
+    });
+  });
 
-doSubmit();
+
 });
 </script>
 <script>

@@ -66,11 +66,11 @@
   <div class="row-fluid diannaoduan">
       <?php foreach ($list as $key => $value):?>
           <div class="thumbnail col-md-3">
-            <img alt="300x200" src="<?php echo base_url() ?>data/image/<?php echo $value->face ?>"/>
+            <img alt="300x200" src="/data/image/<?php echo $value->face ?>"/>
             <div class="caption">
-              <h3>
+              <h4>
                 <?php echo $value->title ?>
-              </h3>
+              </h4>
               <p>
                 <?php echo $value->introduce ?>
               </p>
@@ -86,11 +86,11 @@
       <?php foreach ($list as $key => $value):?>
         <li class="col-md-3">
           <div class="thumbnail">
-            <img alt="300x200" src="<?php echo base_url() ?>data/image/<?php echo $value->face ?>"/>
+            <img alt="300x200" src="/data/image/<?php echo $value->face ?>"/>
             <div class="caption">
-              <h3>
+              <h5><b>
                 <?php echo $value->title ?>
-              </h3>
+              </b></h5>
               <p>
                 <?php echo $value->introduce ?>
               </p>
