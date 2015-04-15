@@ -152,7 +152,7 @@
         <label for="content" class="col-sm-2 control-label">内容</label>
         <div class="col-sm-10">
            <textarea type="text" class="form-control" name="content" id="content" 
-              placeholder="请输入博客内容" rows="6"></textarea>
+              placeholder="请输入博客内容" rows="36"></textarea>
         </div>
      </div>
      <div class="form-group">
@@ -177,9 +177,9 @@
 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs nav-justified" role="tablist" id="category_manage">
-            <li role="presentation" class="active" aa="5"><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-1" aria-controls="panel-1" role="tab" data-toggle="tab">添加分类</a></li>
-            <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-2" aria-controls="panel-2" role="tab" data-toggle="tab">编辑分类</a></li>
-            <li role="presentation" class=""><a href="http://caibaojian.com/demo/2015/3/bootstrap-tabs.html#panel-3" aria-controls="panel-3" role="tab" data-toggle="tab">删除分类</a></li>
+            <li role="presentation" class="active"><a href="#panel-1" aria-controls="panel-1" role="tab" data-toggle="tab">添加分类</a></li>
+            <li role="presentation" class=""><a href="#panel-2" aria-controls="panel-2" role="tab" data-toggle="tab">编辑分类</a></li>
+            <li role="presentation" class=""><a href="#panel-3" aria-controls="panel-3" role="tab" data-toggle="tab">删除分类</a></li>
           </ul>
 
           <!-- Tab panes -->
