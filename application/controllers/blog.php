@@ -8,6 +8,30 @@ class Blog extends CI_Controller {
 	}
 
 	/**
+	 * 浏览博客内容
+	 */
+	public function blog_detail(){
+		$id = $this->uri->segment(3);
+		$query = $this->db->get_where('blog',array('id'=>$id));
+		$data['detail'] = $query->result_array();
+		$this->load->view('blog/blog_detail',$data);
+	}
+
+	/**
+	 * 编辑博客
+	 */
+	public function edit(){
+		if(!$_POST){
+			$id = $this->uri->segment(3);
+			$query = $this->db->get_where('blog',array('id'=>$id));
+			$data['edit'] = $query->result_array();
+			$this->load->view('blog/blog_edit',$data);
+			return;
+		}
+
+	}	
+
+	/**
 	 * 发布博客
 	 */
 	// 发布博客页面

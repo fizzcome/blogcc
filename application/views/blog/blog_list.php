@@ -95,7 +95,7 @@
                 <?php echo $value->introduce ?>
               </p>
               <p>
-                <a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
+                <a class="btn btn-primary" href="/blog/blog_detail/<?php echo $value->id ?>">浏览</a> <a href="/blog/edit/<?php echo $value->id ?>" class="btn">编辑</a>
               </p>
             </div>
           </div>
