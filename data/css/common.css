@@ -1,0 +1,54 @@
+@charset "utf-8";
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body {background:url(../images/bg.jpg); font-size:14px; font-family: "Microsoft YaHei"; color:#333; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#666; text-decoration:none; }
+a:hover { text-decoration:none; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px  "Microsoft YaHei"; }
+input{border:none;}
+table { border-collapse:collapse; }
+html {overflow-y: scroll;}
+html,body{height:100%;}
+
+
+
+
+
+.nav{width:100%; background:#110F10; height:39px; border-bottom:1px solid #3E020E;}
+.navs{width:880px; margin:0 auto; height:39px; color:#9EA4A4; background:url(../images/nav.jpg) no-repeat; padding-left:30px; line-height:39px; background-position:left 50%;}
+.navdiv{width:100%; background:#A10417; height:4px; border-bottom:1px solid #BE595F;}
+
+.main{width:960px; background:#fff; margin:0 auto; overflow:hidden; min-height:810px;}
+.maincon{width:622px; overflow:hidden; margin:50px auto; padding-bottom:40px;}
+.maincon h1{color:#9d031b; font-size:20px; text-align:center; font-weight:bold;}
+.maincon p{color:#333; font-size:14px; font-weight:400; margin-top:22px; text-indent:2em;}
+
+.pay{margin:30px auto;}
+.pay a{display:inline-block; width:250px; height:55px; border:3px solid #AA1324; font-size:20px; color:#a10a1b; font-weight:400; text-align:center; line-height:55px;}
+.pay a.no-pay{float:right;}
+#mypay{background:#A20B1C; color:#fff;}
+
+.divinput{width:100%; height:26px; margin-top:10px;}
+.divinput label{display:inline-block; width:115px; font-size:18px; color:#a10a1b;}
+.divinput select{width:128px; height:24px; border:1px solid #ABADB3;}
+.divinput span{color:#f00; margin-left:20px; display:none;}
+
+.divinput input.text{width:198px; height:22px; border:1px solid #ABADB3; margin-left:3px;}
+.button{display:block; width:150px; height:38px; background:#D4482D; line-height:38px; text-align:center; color:#fff; font-size:20px; font-weight:400; border-radius:5px; margin:30px auto;}
+.no-button{display:block; width:150px; height:38px; background:#999; line-height:38px; text-align:center; color:#fff; font-size:20px; font-weight:400; border-radius:5px; margin:30px auto;}
+
+footer{height:84px; background:#070506; border-top:6px solid #A0071C;}
+footer div{width:880px; height:45px; margin:18px auto; background:url(../images/logo.jpg) no-repeat; padding-left:30px; background-position:left 50%;}
+footer div p{line-height:23px; color:#9EA4A4; font-weight:400; padding-left:10px;}
+
+
+.maincon2{width:622px; margin:0 auto; padding-top:150px;}
+.maincon2 h1{font-size:32px; color:#a20b1c; font-weight:700; text-align:center;}
+.maincon2 a{display:inline-block; width:100%; font-size:18px; color:#0099cc; font-weight:700; text-align:center; margin:30px auto;}
+.maincon2 a.success{display:block; width:380px; height:60px; line-height:60px; font-size:20px; color:#fff; background:#AA1324; font-weight:400; text-align:center; margin:30px auto;}
+.maincon2 p{margin:30px auto; font-size:18px; color:#333; font-weight:700; text-align:center;}

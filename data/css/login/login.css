@@ -1,0 +1,337 @@
+/*common loginBox start*/
+.login .loginBox{
+	background:#f1f4f6;
+	border: 1px solid #fbfbfb;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+	margin:auto;
+	-moz-box-shadow:0 2px 5px #e6e6e6;/*firefox*/
+	-webkit-box-shadow:0 2px 5px #e6e6e6;/*webkit*/
+	box-shadow:0 2px 5px #e6e6e6;/*opera或ie9*/
+	height:238px;
+	position:relative;
+	margin-bottom:50px;
+}
+.login .loginBox .tag{
+	width:41px;
+	height:58px;
+	background:url(../../images/login/loginTag.png) no-repeat;
+	position:absolute;
+	top:-12px;
+	display:block;
+	left:-12px;
+}
+.loginBox h3{
+	font-size:22px;
+	color:#c73924;
+	padding-bottom:23px;
+}
+.login .loginBox .loginMessage div{
+	position:relative;
+	padding-bottom:3px;
+	color:#787c7f;
+	height:30px;
+}
+.login .loginBox .loginMessage .tit{
+	width:70px;
+	float:left;
+	text-align:left;
+	font-size:14px;
+	line-height:29px;
+	padding-bottom:0;
+}
+.loginBox .l{
+	padding: 35px 0 0 23px;
+	float:left;
+	width:275px;
+
+}
+.login .loginBox .submit a{
+	color:#797b80;
+	text-decoration:underline;
+	font-size:12px;
+	line-height:30px;
+	display:inline-block;
+	height:30px;
+	float:left;
+}
+.login .loginBox .submit .forgot{
+	cursor: pointer;
+}
+.login .loginBox .loginMessage input{
+	height:21px;
+	border:1px solid #cdd0d2;
+	-moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+	padding:3px;
+	font-size:14px;
+	color:#797b80;
+	float:left;
+	width:196px;
+	background:#fff;
+}
+
+.login .loginBox .submit{
+	padding-top:12px;
+	height:30px;
+}
+.login .loginBox .r{
+	position:relative;
+	float:right;
+	width:187px;
+	background:url(../../images/login/loginMessageBg.jpg) repeat-x;
+	height:239px;
+	-moz-border-radius:0 5px 5px 0;
+    -webkit-border-radius:0 5px 5px 0;
+    border-radius:0 5px 5px 0;
+	border-left:1px solid #d19491;
+}
+.login .loginBox img{
+	position:absolute;
+	top:30px;
+	left:25px;
+	
+}
+.login .loginBox .r .mits{
+	display:block;
+	cursor: pointer;
+	border:none;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+	width:114px;
+	height:30px;
+	position:absolute;
+	top:192px;
+	left:36px;
+	font-size:14px;
+	font-weight:bold;
+	color:#ae0d21;
+	background:#fff;
+	text-align:center;
+	line-height:30px;
+	
+}
+/*common loginBox end*/
+/*
+ *userLoginBox start
+ */
+
+.login .userLogin{
+	width:501px;
+}
+.login .userLogin .loginMessage input{
+	width:237px;
+	background:#fff;
+}
+.login .userLogin .loginMessage  div{
+	padding-left:29px;
+	margin-bottom:16px;
+}
+.login .userLogin .loginMessage .userName{
+	height:26px;
+	background:url(../../images/login/passWord.png) no-repeat center left;
+}
+.login .userLogin .loginMessage .passWord{
+	height:26px;
+	background:url(../../images/login/userName.png) no-repeat center left;
+}
+.login .userLogin .submit .mited{
+	border:1px solid #c7321f;
+}
+/*
+ *userLoginBox end
+ *register start
+ */
+.register {
+	width:354px;
+}
+#register .loginMessage input{
+	width:232px;
+}
+#register .l{
+	width:310px;
+}
+.register h3{
+	padding-bottom:11px;
+}
+.login .register .loginMessage div span{
+	position:absolute;
+	top:0;
+	left:0;
+	padding-left:10px;
+	line-height:30px;
+}
+.login .register .submit .forgot{
+	color:#c63a23;
+	font-weight:bold;
+}
+/*
+ *register end
+ *changePassWord start
+ */
+.changePassword {
+	width:371px;
+}
+.changePassword .l{
+	padding-left:44px;
+	width:296px;
+}
+.changePassword .loginMessage div{
+	position:relative;
+	padding-left:100px;
+}
+.changePassword .loginMessage span{
+	position:absolute;
+	left:0;
+	top:0;
+	line-height:30px;
+}
+.changePassword .loginMessage input{
+	width:188px;
+}
+.changePassword h3{
+	padding-bottom:39px;
+}
+/*
+ *changePassWord end
+ *newPassWord start
+ */
+.newPassword {
+	width:371px;
+}
+.newPassword .l{
+	padding-left:44px;
+}
+.newPassword .loginMessage input{
+	width:267px;
+}
+.newPassword h3{
+	padding-bottom:39px;
+}
+
+/*policy start*/
+.login .policy{
+	width:512px;
+	height:373px;
+	border:1px solid #c8cac9;
+	-moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#e6e6e6', Direction=135, Strength=5) \9;/*for ie6,7,8*/
+	-moz-box-shadow:0 0 10px #c8cac9;/*firefox*/
+	-webkit-box-shadow:0 0 10px #c8cac9;/*webkit*/
+	box-shadow:0 0 10px #c8cac9;/*opera或ie9*/
+}
+.policy .l{
+	width:462px;
+	height:273px;
+	border:1px solid #d7d7d7;
+	background:#fff;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+	padding:0;
+	margin:27px 0 0 25px;
+	overflow:hidden;
+	float:none;
+}
+#policyInner{
+	width:462px;
+	height:275px;
+	overflow-y:hidden;
+}
+.policy .submit{
+	padding:0 25px;
+}
+.policy .submit input{
+	cursor: pointer;
+}
+.policy .submit .sel{
+	float:right;
+}
+.submit .mit input{
+	border:none;
+	
+	background: url(../../images/common/icon.png) no-repeat center right;
+	color:#fff;
+	font-weight:bold;
+	cursor: pointer;
+	padding-right: 17px;
+}
+.submit .ed input{
+	background:none;
+	padding-right:0;
+}
+#policyInner h3{
+	padding-top:22px;
+	padding-left:22px;
+}
+#policyInner p{
+	padding:0 22px;
+	line-height:20px;
+}
+.login .loginBox .submit .a_sel{
+	display:block;
+	float:right;
+	height:21px;
+	line-height:21px;
+	color:#fff;
+	text-decoration:none;
+}
+.po_textarea{
+	width: 448px;
+	height: 237px;
+	padding: 10px;
+	text-align: left;
+	margin-left: 20px;
+	margin-top: 5px;
+	line-height: 25px;
+	background:#fff;
+	border-color:#ccc;
+	overflow:hidden;
+	position:relative;
+	border:1px solid #ccc;
+}
+.po_inner{
+	position:absolute;
+	left:0;
+	top:0;
+	width:428px;
+	padding-left:10px;
+}
+.po_textarea .po_inner h3{
+	color:#000;
+	font-size:14px;
+	padding-bottom:0;
+}
+.po_textarea .po_inner h5{
+	font-weight:400;
+}
+.po_slider{
+	position:absolute;
+	right:0;
+	width:20px;
+	background:#f0f0f0;
+	top:0;
+	height:257px;
+}
+.po_slider .btn{
+	position:relative;
+	height:37px;
+	top:0;
+	left:0;
+	background:url(../../images/login/slider.jpg) no-repeat;
+	cursor: pointer;
+}
+.loginBox .po_tit{
+	text-align:center;
+	font-weight:bold;
+	color:#C73924;
+	font-size:22px;
+	line-height:30px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
